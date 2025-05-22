@@ -220,7 +220,9 @@ const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <div className="flex items-center mb-4">
-                <div className="h-12 w-12 rounded-full bg-gray-200"></div>
+                <div className="h-12 w-12 rounded-full bg-gray-200">
+                  <img src="https://www.bing.com/images/search?view=detailV2&ccid=eKm4PEAl&id=EDFDC724409EE90974AF7E5BEDD6EDDAFBA11041&thid=OIP.eKm4PEAlbRfk6ri3pGBdNAHaHP&mediaurl=https%3a%2f%2fi.pinimg.com%2f736x%2f7a%2f2a%2feb%2f7a2aeba78c5c034eca6a6ae55e5b0aea.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.78a9b83c40256d17e4eab8b7a4605d34%3frik%3dQRCh%252b9rt1u1bfg%26pid%3dImgRaw%26r%3d0&exph=719&expw=735&q=ethiopian+guy+photo+for+icons&simid=608025254039598319&FORM=IRPRST&ck=FF3B1EDD8B01D06DF73C671F38FCFF9B&selectedIndex=58&itb=0" alt="User Avatar" />
+                </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold">Abebe Bekele</h4>
                   <p className="text-gray-600 text-sm">Residential Contractor, Addis Ababa</p>
