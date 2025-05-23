@@ -1,8 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight, Paperclip as PaperBag, CreditCard, Truck, Users, BarChart3, Shield, Database, Gauge } from 'lucide-react';
+import Button from '../components/ui/Button';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
-import Button from '../components/ui/Button';
 
 const LandingPage: React.FC = () => {
   // Background image URL (Placeholder for Ethiopian construction scene)
@@ -29,17 +30,17 @@ const LandingPage: React.FC = () => {
               Connect with trusted suppliers, get real-time pricing, and streamline your construction project with TaborBridge.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-              <a href="/register">
+              <Link to="/register">
                 <Button size="lg">
                   Get Started
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
-              </a>
-              <a href="#how-it-works">
+              </Link>
+              <Link to="#how-it-works">
                 <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white hover:text-gray-900">
                   How It Works
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -150,11 +151,11 @@ const LandingPage: React.FC = () => {
           </div>
           
           <div className="text-center mt-12">
-            <a href="/register">
+            <Link to="/register">
               <Button>
                 Join TaborBridge Today
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -259,16 +260,16 @@ const LandingPage: React.FC = () => {
             Join thousands of construction professionals and suppliers on Ethiopia's premier materials marketplace.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
-            <a href="/register">
+            <Link to="/register">
               <Button variant="secondary" size="lg">
                 Sign Up Now
               </Button>
-            </a>
-            <a href="/login">
+            </Link>
+            <Link to="/login">
               <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white hover:text-[#0C4DA2]">
                 Log In
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

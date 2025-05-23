@@ -58,9 +58,11 @@ export default defineConfig({
   },
   server: {
     port: 3000, // Default dev server port
-    open: true // Auto-open browser
+    open: true, // Auto-open browser
+    historyApiFallback: true // Enable SPA routing in development
   },
   preview: {
-    port: 4173 // Preview server port
+    port: 4173, // Preview server port
+    historyApiFallback: true // Enable SPA routing in preview
   }
 });

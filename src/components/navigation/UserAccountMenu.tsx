@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -9,18 +10,18 @@ const UserAccountMenu: React.FC = () => {
   if (!user) {
     return (
       <div className="flex items-center space-x-4">
-        <a
-          href="/login"
+        <Link
+          to="/login"
           className="text-sm font-medium text-gray-700 hover:text-gray-900"
         >
           Sign in
-        </a>
-        <a
-          href="/register"
+        </Link>
+        <Link
+          to="/register"
           className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
         >
           Sign up
-        </a>
+        </Link>
       </div>
     );
   }

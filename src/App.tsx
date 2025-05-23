@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { QueryProvider } from './context/QueryContext';
 import LandingPage from './pages/LandingPage';
@@ -13,43 +14,30 @@ import Header from './components/navigation/Header';
 import MobileBottomNav from './components/navigation/MobileBottomNav';
 
 function App() {
-  // Simplified routing for the demo
-  const path = window.location.pathname;
-  
-  const renderPage = () => {
-    switch (path) {
-      case '/login':
-        return <LoginPage />;
-      case '/register':
-        return <RegistrationPage />;
-      case '/forgot-password':
-        return <ForgotPasswordPage />;
-      case '/verification-status':
-        return <VerificationStatusPage />;
-      case '/profile-completion':
-        return <ProfileCompletionPage />;
-      case '/dashboard':
-        // This would normally use proper auth checks
-        return <BuyerDashboard />;
-      case '/seller/dashboard':
-        return <SellerDashboard />;
-      default:
-        return <LandingPage />;
-    }
-  };
-  
   return (
-    <QueryProvider>
-      <AuthProvider>
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-1 mt-16">
-            {renderPage()}
-          </main>
-          <MobileBottomNav />
-        </div>
-      </AuthProvider>
-    </QueryProvider>
+    <Router>
+      <QueryProvider>
+        <AuthProvider>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1 mt-16">
+              <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegistrationPage />} />
+                <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+                <Route path="/verification-status" element={<VerificationStatusPage />} />
+                <Route path="/profile-completion" element={<ProfileCompletionPage />} />
+                <Route path="/dashboard" element={<BuyerDashboard />} />
+                <Route path="/seller/dashboard" element={<SellerDashboard />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </main>
+            <MobileBottomNav />
+          </div>
+        </AuthProvider>
+      </QueryProvider>
+    </Router>
   );
 }
 

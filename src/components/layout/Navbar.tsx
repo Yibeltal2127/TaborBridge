@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../ui/Button';
@@ -44,7 +45,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center">
+            <Link to="/" className="flex items-center">
               {/* Placeholder for logo */}
               <div className="h-10 w-10 bg-[#0C4DA2] rounded-md flex items-center justify-center">
                 <span className="text-white font-bold">TB</span>
@@ -52,35 +53,35 @@ const Navbar: React.FC = () => {
               <span className={`ml-2 font-bold text-xl ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
                 TaborBridge
               </span>
-            </a>
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            <a 
-              href="#" 
+            <Link 
+              to="#" 
               className={`text-sm font-medium ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'}`}
             >
               About
-            </a>
-            <a 
-              href="#" 
+            </Link>
+            <Link 
+              to="#" 
               className={`text-sm font-medium ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'}`}
             >
               How It Works
-            </a>
-            <a 
-              href="#" 
+            </Link>
+            <Link 
+              to="#" 
               className={`text-sm font-medium ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'}`}
             >
               Pricing
-            </a>
-            <a 
-              href="#" 
+            </Link>
+            <Link 
+              to="#" 
               className={`text-sm font-medium ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'}`}
             >
               Contact
-            </a>
+            </Link>
             
             <div className="ml-4 flex items-center">
               <button 
@@ -108,18 +109,18 @@ const Navbar: React.FC = () => {
                 
                 {isProfileMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 ring-1 ring-black ring-opacity-5">
-                    <a 
-                      href="/profile" 
+                    <Link 
+                      to="/profile" 
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Your Profile
-                    </a>
-                    <a 
-                      href="/verification-status" 
+                    </Link>
+                    <Link 
+                      to="/verification-status" 
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Verification Status
-                    </a>
+                    </Link>
                     <button 
                       onClick={logout}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -131,16 +132,16 @@ const Navbar: React.FC = () => {
               </div>
             ) : (
               <div className="flex items-center space-x-4">
-                <a href="/login">
+                <Link to="/login">
                   <Button variant="outline" size="sm">
                     Log in
                   </Button>
-                </a>
-                <a href="/register">
+                </Link>
+                <Link to="/register">
                   <Button size="sm">
                     Sign up
                   </Button>
-                </a>
+                </Link>
               </div>
             )}
           </div>
@@ -165,30 +166,30 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a 
-              href="#" 
+            <Link 
+              to="#" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
             >
               About
-            </a>
-            <a 
-              href="#" 
+            </Link>
+            <Link 
+              to="#" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
             >
               How It Works
-            </a>
-            <a 
-              href="#" 
+            </Link>
+            <Link 
+              to="#" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
             >
               Pricing
-            </a>
-            <a 
-              href="#" 
+            </Link>
+            <Link 
+              to="#" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
             >
               Contact
-            </a>
+            </Link>
             
             <button 
               className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700"
@@ -216,18 +217,18 @@ const Navbar: React.FC = () => {
                 </div>
               </div>
               <div className="mt-3 px-2 space-y-1">
-                <a 
-                  href="/profile" 
+                <Link 
+                  to="/profile" 
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
                 >
                   Your Profile
-                </a>
-                <a 
-                  href="/verification-status" 
+                </Link>
+                <Link 
+                  to="/verification-status" 
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
                 >
                   Verification Status
-                </a>
+                </Link>
                 <button 
                   onClick={logout}
                   className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
@@ -238,16 +239,16 @@ const Navbar: React.FC = () => {
             </div>
           ) : (
             <div className="pt-4 pb-3 border-t border-gray-200 px-5 space-y-3">
-              <a href="/login" className="block w-full">
+              <Link to="/login" className="block w-full">
                 <Button variant="outline" fullWidth>
                   Log in
                 </Button>
-              </a>
-              <a href="/register" className="block w-full">
+              </Link>
+              <Link to="/register" className="block w-full">
                 <Button fullWidth>
                   Sign up
                 </Button>
-              </a>
+              </Link>
             </div>
           )}
         </div>
